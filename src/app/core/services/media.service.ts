@@ -25,6 +25,10 @@ export class MediaService {
     return this._loading;
   }
 
+  getPage(){
+    return this.page;
+  }
+
   get params(){
     return {
       api_key: this.apiKey,

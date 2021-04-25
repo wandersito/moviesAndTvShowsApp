@@ -4,7 +4,7 @@ import { combineLatest } from 'rxjs';
 import { Cast } from '../../interfaces/CreditsResponse.interface';
 import { Keyword } from '../../interfaces/KeywordsResponse.interface';
 import { MediaType, Result } from '../../interfaces/MediaResponse.interface';
-import { Provider } from '../../interfaces/ProvidersResponse.interface';
+import { Buy } from '../../interfaces/ProvidersResponse.interface';
 import { MediaService } from '../../services/media.service';
 
 @Component({
@@ -19,8 +19,11 @@ export class DetailComponent implements OnInit {
 
   media!:Result;
   cast: Cast[] = [];
-  provider!: Provider;
   keywords!: Keyword[];
+
+  rent:Buy[] = [];
+  subscription:Buy[] = [];
+  buy:Buy[] = [];
 
   constructor(  private mediaService: MediaService,
                 private location: Location) { }
@@ -37,9 +40,13 @@ export class DetailComponent implements OnInit {
 
       this.media = media!;
       this.cast = cast.filter( actor => actor.profile_path != null );
-      this.provider = provider;
       this.keywords =  keywords;
+
+      this.rent = provider.rent;
+      this.buy = provider.buy;
+      this.subscription = provider.flatrate;
     });
+
   }
 
   onBack(){

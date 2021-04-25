@@ -1,8 +1,11 @@
 <p-carousel [value]="results" [numVisible]="3" [numScroll]="1" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions" *ngIf="results.length>0" [circular]="true">
     <ng-template let-result pTemplate="item">
         <div class="p-mx-2">
-            <img [src]="result.backdrop_path | imageRoute" [alt]="result.title || result.name" class="carousel-image" />
-            {{ result.title || result.name }}
+            <img    [routerLink]="[result.media_type | route, result.id]"
+                    [src]="result.backdrop_path | imageRoute: carouselImgSize" [alt]="result.title || result.name" class="carousel-image" />
+                    <h2>
+                        {{ result.title || result.name }}
+                    </h2>
         </div>
     </ng-template>
 </p-carousel>

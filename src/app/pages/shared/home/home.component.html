@@ -1,5 +1,7 @@
-<h2>Trending Today</h2>
+<h1>Trending Today</h1>
 <app-carousel [results]="carouselData"></app-carousel>
 
-<h2>Trending Week</h2>
-<app-card [results]="cardData"></app-card>
+<h1>Trending Week</h1>
+<app-list [results]="mediaData"
+          (loadData)="getTrending()">
+</app-list>

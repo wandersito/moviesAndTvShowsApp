@@ -14,7 +14,8 @@ import { RoutePipe } from '../../shared/pipes/route.pipe';
 import { DetailComponent } from './detail/detail.component';
 import { ListComponent } from './list/list.component';
 import { NamePipe } from '../../shared/pipes/name.pipe';
-
+import { DialogComponent } from './dialog/dialog.component';
+import { ContentDialogComponent } from './content-dialog/content-dialog.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,8 @@ import { NamePipe } from '../../shared/pipes/name.pipe';
     ImageRoutePipe,
     RoutePipe,
     NamePipe,
+    DialogComponent,
+    ContentDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -41,6 +44,9 @@ import { NamePipe } from '../../shared/pipes/name.pipe';
     CarouselComponent,
     DetailComponent,
     ListComponent,
+  ],
+  entryComponents: [
+    ContentDialogComponent
   ]
 })
 export class ComponentsModule { }

@@ -11,7 +11,7 @@ import { MediaService } from '../../../core/services/media.service';
 export class HomeComponent implements OnInit {
 
   carouselData:Result[] = [];
-  cardData:Result[] = [];
+  mediaData:Result[] = [];
 
   constructor( private mediaService: MediaService ) { }
 
@@ -20,13 +20,20 @@ export class HomeComponent implements OnInit {
     this.mediaService.getTrending( TimeWindow.Day )
     .pipe( 
       switchMap( day => {
-          this.carouselData = day 
-          return this.mediaService.getTrending( TimeWindow.Week );
+        this.mediaService.reset();
+        this.carouselData = day 
+        return this.mediaService.getTrending( TimeWindow.Week );
       })
-     ).subscribe( week => {
-          this.cardData = week;
-        });
+    ).subscribe( week => {
+      this.mediaData = week;
+    });
+  }
 
+  getTrending(){
+    this.mediaService.getTrending( TimeWindow.Week )
+        .subscribe( media => {
+          this.mediaData.push( ...media );
+        });
   }
 
 }

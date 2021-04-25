@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Result } from '../../interfaces/MediaResponse.interface';
+import { SizeImg } from '../../interfaces/SizeImage.interface';
 
 @Component({
   selector: 'app-carousel',
@@ -9,6 +10,8 @@ import { Result } from '../../interfaces/MediaResponse.interface';
 export class CarouselComponent implements OnInit {
 
   @Input() results:Result[] = [];
+
+  carouselImgSize: SizeImg = SizeImg.lg;
 
   responsiveOptions: any = [];
 

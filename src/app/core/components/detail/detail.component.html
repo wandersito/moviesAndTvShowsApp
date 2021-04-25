@@ -12,7 +12,7 @@
                 <p-rating [ngModel]="media.vote_average" [readonly]="true" [stars]="10" [cancel]="false"></p-rating>
             </div>
             <div class="p-col text-start">
-                {{ media.vote_average / 2 | number: '1.1-1' }}
+                {{ media.vote_average | number: '1.1-1' }}
             </div>
         </div>
 
@@ -22,33 +22,49 @@
             </div>
         </div>
 
-        <div class="p-grid">
-            <div class="p-col">
+        <div class="p-d-flex p-flex-wrap p-jc-start">
+            <div class="p-m-1" *ngFor="let keyword of keywords">
+                <p-badge severity="danger" [value]="keyword.name"></p-badge>
+            </div>
+        </div>
+
+        <div class="p-d-flex">
+            <h2>Providers</h2>
+        </div>
+
+        <div class="p-d-flex p-flex-wrap p-jc-start">
+            <div class="p-m-2" *ngIf="rent">
+                <app-dialog  *ngIf="rent.length > 0" [provider]="rent" label="Rent"></app-dialog>
+            </div>
+            <div class="p-m-2" *ngIf="buy">
+                <app-dialog *ngIf="buy.length > 0" [provider]="buy" label="Buy"></app-dialog>
+            </div>
+            <div class="p-m-2" *ngIf="subscription">
+                <app-dialog *ngIf="subscription.length > 0" [provider]="subscription" label="Subscription"></app-dialog>
+            </div>
+        </div>
+     
+        <div class="p-d-flex">
+            <div class="p-m-2">
                 <button pButton
-                        class="p-button-info"
                         (click)="onBack()">
                     Regresar
                 </button>
             </div>
         </div>
 
-        <!-- <div class="row mt-4 justify-content-center">
-            <div class="col" *ngFor="let keyword of keywords">
-                <span class="badge bg-primary"> {{ keyword.name }} </span>
-            </div>
-        </div> -->
-        
-
     </div>
 </div>
-<!-- 
-<div class="row mt-2">
+
+
+
+<!-- <div class="row mt-2">
     <div class="col">
         <app-providers [provider]="provider"></app-providers>
     </div>
-</div>
+</div> -->
 
-<div class="row mt-5" *ngIf="cast.length > 0">
+<!-- <div class="row mt-5" *ngIf="cast.length > 0">
     <div class="col">
         <app-cast-slide [cast]="cast"></app-cast-slide>
     </div>

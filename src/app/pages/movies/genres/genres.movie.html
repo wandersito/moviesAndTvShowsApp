@@ -1,1 +1,6 @@
-<app-list [results]="movies" [title]="header"></app-list>
+<app-list 
+    results]="movies" 
+    [title]="header"
+    (loadData)="getMovies()"
+    >
+</app-list>

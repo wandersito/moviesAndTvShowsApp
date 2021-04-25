@@ -7,7 +7,7 @@ export interface Provider {
     link:      string;
     rent:      Buy[];
     buy:       Buy[];
-    flatrate?: Buy[];
+    flatrate: Buy[];
 }
 
 export interface Buy {

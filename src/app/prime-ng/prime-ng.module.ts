@@ -6,6 +6,8 @@ import { AutoCompleteModule } from 'primeng/autocomplete';
 import { CarouselModule } from 'primeng/carousel';
 import { CardModule } from 'primeng/card';
 import { RatingModule } from 'primeng/rating';
+import { BadgeModule } from 'primeng/badge';
+import { DynamicDialogModule } from 'primeng/dynamicdialog';
 
 
 @NgModule({
@@ -17,6 +19,8 @@ import { RatingModule } from 'primeng/rating';
     CarouselModule,
     CardModule,
     RatingModule,
+    BadgeModule,
+    DynamicDialogModule,
   ]
 })
 export class PrimeNgModule { }

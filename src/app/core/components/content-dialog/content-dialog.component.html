@@ -1,0 +1,6 @@
+<div class="p-d-flex p-flex-wrap p-jc-start" *ngFor="let provider of providers">
+    <img class="p-m-1" width="50" [src]="provider.logo_path | imageRoute" [alt]="provider.provider_name"> 
+    <strong class="p-d-flex p-mx-1 p-as-center">
+        {{ provider.provider_name }}
+    </strong>
+</div>
