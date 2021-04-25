@@ -3,13 +3,15 @@ import { CommonModule } from '@angular/common';
 import { DetailTvShow } from './detail/detail.tv-show';
 import { ListTvShow } from './list/list.tv-show';
 import { ComponentsModule } from '../../core/components/components.module';
+import { GenresTvShow } from './genres/genres.tv-show';
 
 
 
 @NgModule({
   declarations: [
     DetailTvShow,
-    ListTvShow
+    ListTvShow,
+    GenresTvShow
   ],
   imports: [
     CommonModule,

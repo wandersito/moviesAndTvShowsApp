@@ -1,9 +1,9 @@
-<p-menubar [model]="items">
+<p-menubar [model]="items" [autoDisplay]="true">
     <ng-template pTemplate="start">
         <img src="assets/netflix.svg" height="20" class="p-mr-2">
     </ng-template>
     <div>
-        <i class="p-mr-2 pi pi-search"></i>
+        <i for="searchValue" class="p-mr-2 pi pi-search"></i>
         <app-search></app-search>
     </div>
 </p-menubar>
