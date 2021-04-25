@@ -1,1 +1,17 @@
-<p>card works!</p>
+<div class="p-d-flex p-flex-wrap p-jc-around">
+    <div class="p-my-3 animate__animated animate__fadeIn" *ngFor="let item of results">
+        <p-card [header]="item | name" [style]="{width: '360px'}" styleClass="p-card-shadow">
+            <ng-template pTemplate="header">
+                <img alt="Card" [routerLink]="[item.media_type | route, item.id]" [src]="item.poster_path | imageRoute">
+            </ng-template>
+            <ng-template pTemplate="subheader">
+                <div class="p-d-flex">                      
+                    <p-rating [ngModel]="item.vote_average" [readonly]="true" [stars]="10" [cancel]="false"></p-rating>
+                    <strong class="p-ml-2">
+                        {{ item.vote_average }}
+                    </strong>
+                </div>
+            </ng-template>   
+        </p-card>
+    </div>
+</div>

@@ -10,6 +10,10 @@ import { SearchComponent } from './search/search.component';
 import { CardComponent } from './card/card.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { ImageRoutePipe } from '../../shared/pipes/image-route.pipe';
+import { RoutePipe } from '../../shared/pipes/route.pipe';
+import { DetailComponent } from './detail/detail.component';
+import { ListComponent } from './list/list.component';
+import { NamePipe } from '../../shared/pipes/name.pipe';
 
 
 @NgModule({
@@ -18,7 +22,11 @@ import { ImageRoutePipe } from '../../shared/pipes/image-route.pipe';
     SearchComponent,
     CardComponent,
     CarouselComponent,
-    ImageRoutePipe
+    DetailComponent,
+    ListComponent,
+    ImageRoutePipe,
+    RoutePipe,
+    NamePipe,
   ],
   imports: [
     CommonModule,
@@ -31,6 +39,8 @@ import { ImageRoutePipe } from '../../shared/pipes/image-route.pipe';
     SearchComponent,
     CardComponent,
     CarouselComponent,
+    DetailComponent,
+    ListComponent,
   ]
 })
 export class ComponentsModule { }

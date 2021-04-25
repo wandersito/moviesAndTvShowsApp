@@ -1,6 +1,14 @@
-<p-autoComplete [(ngModel)]="selectedCountry" 
-                [suggestions]="filteredCountries" 
-                (completeMethod)="filterCountry()"
-                field="name" 
-                [minLength]="1">
+<p-autoComplete [(ngModel)]="searchValue" 
+                [suggestions]="filteredMedia" 
+                (completeMethod)="searchMedia()"
+                [minLength]="1"
+                (onSelect)="findAll( $event )"
+                emptyMessage="Results not found"
+                placeholder="Search"
+                >
+    
+            <ng-template let-searchValue pTemplate="item">
+                    <div style="font-size:18px;float:right;margin:10px 10px 0 0">{{searchValue.name || searchValue.title}}</div>
+            </ng-template>
+
 </p-autoComplete>

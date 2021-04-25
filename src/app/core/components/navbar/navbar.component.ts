@@ -19,11 +19,17 @@ export class NavbarComponent implements OnInit {
           url: '/browse/home'
       },
       {
-          label: 'Edit',
-          icon: 'pi pi-fw pi-pencil',
+          label: 'Movies',
           items: [
-              {label: 'Delete', icon: 'pi pi-fw pi-trash'},
-              {label: 'Refresh', icon: 'pi pi-fw pi-refresh'}
+              { label: 'Anime' },
+              { label: 'Romance' }
+          ]
+      },
+      {
+          label: 'Tv Shows',
+          items: [
+              { label: 'Anime' },
+              { label: 'Romance' }
           ]
       }
   ];

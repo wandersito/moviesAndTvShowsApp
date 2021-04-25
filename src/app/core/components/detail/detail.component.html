@@ -1,0 +1,57 @@
+<div class="p-grid animate__animated animate__fadeIn" *ngIf="media">
+    <div class="p-sm-8 p-md-6 p-lg-3">
+        <img [src]="media.poster_path | imageRoute" 
+             [alt]="media.name">
+    </div>
+
+    <div class="p-sm-8 p-md-6 p-lg-7">
+        <h3> {{ media.name || media.title }} </h3>
+
+        <div class="p-grid">
+            <div class="p-col">
+                <p-rating [ngModel]="media.vote_average" [readonly]="true" [stars]="10" [cancel]="false"></p-rating>
+            </div>
+            <div class="p-col text-start">
+                {{ media.vote_average / 2 | number: '1.1-1' }}
+            </div>
+        </div>
+
+        <div class="p-grid">
+            <div class="p-col">
+                {{ media.overview }}
+            </div>
+        </div>
+
+        <div class="p-grid">
+            <div class="p-col">
+                <button pButton
+                        class="p-button-info"
+                        (click)="onBack()">
+                    Regresar
+                </button>
+            </div>
+        </div>
+
+        <!-- <div class="row mt-4 justify-content-center">
+            <div class="col" *ngFor="let keyword of keywords">
+                <span class="badge bg-primary"> {{ keyword.name }} </span>
+            </div>
+        </div> -->
+        
+
+    </div>
+</div>
+<!-- 
+<div class="row mt-2">
+    <div class="col">
+        <app-providers [provider]="provider"></app-providers>
+    </div>
+</div>
+
+<div class="row mt-5" *ngIf="cast.length > 0">
+    <div class="col">
+        <app-cast-slide [cast]="cast"></app-cast-slide>
+    </div>
+</div> -->
+
+

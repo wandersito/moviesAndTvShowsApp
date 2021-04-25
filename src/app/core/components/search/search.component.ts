@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { Result } from '../../interfaces/MediaResponse.interface';
+import { MediaService } from '../../services/media.service';
 
 @Component({
   selector: 'app-search',
@@ -7,21 +10,32 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchComponent implements OnInit {
 
-  selectedCountry: any;
+  suggestedMedia:Result[] = [];
 
-  filteredCountries: any[] = ['Juan', 'David'];
+  searchValue!: string;
 
-  countries: any[] = [];
+  filteredMedia: Result[] = [];
 
-  constructor() { }
+  constructor(  private mediaService: MediaService,
+                private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  filterCountry() {
+  searchMedia() {
 
-    this.filteredCountries = [
-      {name: 'Juan'}, {name: 'David'}];
+    this.mediaService.reset();
+
+    this.mediaService.getMediaBySearch( this.searchValue )
+          .subscribe( mediaItems => {
+            this.filteredMedia = mediaItems.splice(0,5);
+          });
+  }
+
+  findAll( value: Result){
+    console.log( value.id );
+    this.router.navigate(['/browse', value.media_type, value.id]);
+    this.searchValue = '';
   }
 
 

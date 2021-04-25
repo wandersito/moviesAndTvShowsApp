@@ -5,6 +5,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { AutoCompleteModule } from 'primeng/autocomplete';
 import { CarouselModule } from 'primeng/carousel';
 import { CardModule } from 'primeng/card';
+import { RatingModule } from 'primeng/rating';
 
 
 @NgModule({
@@ -15,6 +16,7 @@ import { CardModule } from 'primeng/card';
     AutoCompleteModule,
     CarouselModule,
     CardModule,
+    RatingModule,
   ]
 })
 export class PrimeNgModule { }

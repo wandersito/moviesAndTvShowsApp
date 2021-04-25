@@ -1,6 +1,6 @@
-<p-carousel [value]="results" [numVisible]="3" [numScroll]="1" [responsiveOptions]="responsiveOptions" *ngIf="results.length>0" [circular]="true">
+<p-carousel [value]="results" [numVisible]="3" [numScroll]="1" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions" *ngIf="results.length>0" [circular]="true">
     <ng-template let-result pTemplate="item">
-        <div class="p-mt-4 p-mx-2">
+        <div class="p-mx-2">
             <img [src]="result.backdrop_path | imageRoute" [alt]="result.title || result.name" class="carousel-image" />
             {{ result.title || result.name }}
         </div>
