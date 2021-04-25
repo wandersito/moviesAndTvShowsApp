@@ -14,7 +14,6 @@ export class ContentDialogComponent implements OnInit {
   constructor( private config: DynamicDialogConfig ) { }
 
   ngOnInit(): void {
-    console.log( this.config )
     this.providers = this.config.data;
   }
 
