@@ -5,13 +5,13 @@
     </div>
 
     <div class="p-sm-8 p-md-6 p-lg-7">
-        <h3> {{ media.name || media.title }} </h3>
+        <h1> {{ media.name || media.title }} </h1>
 
         <div class="p-grid">
             <div class="p-col">
                 <p-rating [ngModel]="media.vote_average" [readonly]="true" [stars]="10" [cancel]="false"></p-rating>
             </div>
-            <div class="p-col text-start">
+            <div class="p-col text-start  p-as-center">
                 {{ media.vote_average | number: '1.1-1' }}
             </div>
         </div>
@@ -27,7 +27,7 @@
                 <p-badge severity="danger" [value]="keyword.name"></p-badge>
             </div>
         </div>
-
+        
         <div class="p-d-flex">
             <h2>Providers</h2>
         </div>
@@ -56,18 +56,9 @@
     </div>
 </div>
 
+<h1 class="p-d-flex p-jc-center">Casting </h1>
 
-
-<!-- <div class="row mt-2">
-    <div class="col">
-        <app-providers [provider]="provider"></app-providers>
-    </div>
-</div> -->
-
-<!-- <div class="row mt-5" *ngIf="cast.length > 0">
-    <div class="col">
-        <app-cast-slide [cast]="cast"></app-cast-slide>
-    </div>
-</div> -->
-
+<div>
+    <app-cast-carousel [results]="cast"></app-cast-carousel>
+</div>
 

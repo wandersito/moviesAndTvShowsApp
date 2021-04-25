@@ -16,6 +16,7 @@ import { ListComponent } from './list/list.component';
 import { NamePipe } from '../../shared/pipes/name.pipe';
 import { DialogComponent } from './dialog/dialog.component';
 import { ContentDialogComponent } from './content-dialog/content-dialog.component';
+import { CastCarouselComponent } from './cast-carousel/cast-carousel.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ContentDialogComponent } from './content-dialog/content-dialog.componen
     NamePipe,
     DialogComponent,
     ContentDialogComponent,
+    CastCarouselComponent,
   ],
   imports: [
     CommonModule,
@@ -44,6 +46,7 @@ import { ContentDialogComponent } from './content-dialog/content-dialog.componen
     CarouselComponent,
     DetailComponent,
     ListComponent,
+    CastCarouselComponent,
   ],
   entryComponents: [
     ContentDialogComponent

@@ -4,7 +4,7 @@ import { MediaType, Result } from 'src/app/core/interfaces/MediaResponse.interfa
 import { MediaService } from 'src/app/core/services/media.service';
 
 @Component({
-  selector: 'app-genres',
+  selector: 'app-genres-tv',
   templateUrl: './genres.tv-show.html',
   styleUrls: ['./genres.tv-show.css']
 })

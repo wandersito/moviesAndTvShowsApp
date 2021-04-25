@@ -1,17 +1,17 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Result } from '../../interfaces/MediaResponse.interface';
 import { SizeImg } from '../../interfaces/SizeImage.interface';
+import { Cast } from '../../interfaces/CreditsResponse.interface';
 
 @Component({
-  selector: 'app-carousel',
-  templateUrl: './carousel.component.html',
-  styleUrls: ['./carousel.component.css']
+  selector: 'app-cast-carousel',
+  templateUrl: './cast-carousel.component.html',
+  styleUrls: ['./cast-carousel.component.css']
 })
-export class CarouselComponent implements OnInit {
+export class CastCarouselComponent implements OnInit {
 
-  @Input() results:Result[] = [];
+  @Input() results:Cast[] = [];
 
-  carouselImgSize: SizeImg = SizeImg.lg;
+  carouselImgSize: SizeImg = SizeImg.default;
 
   responsiveOptions: any = [];
 
@@ -19,22 +19,22 @@ export class CarouselComponent implements OnInit {
 		this.responsiveOptions = [
             {
                 breakpoint: '1024px',
-                numVisible: 3,
+                numVisible: 4,
                 numScroll: 3
             },
             {
                 breakpoint: '768px',
-                numVisible: 2,
+                numVisible: 3,
                 numScroll: 2
             },
             {
                 breakpoint: '560px',
-                numVisible: 1,
+                numVisible: 2,
                 numScroll: 1
             }
         ];
 	}
 
 	ngOnInit() {}
-  
+
 }

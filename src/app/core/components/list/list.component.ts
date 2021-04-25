@@ -21,12 +21,9 @@ export class ListComponent implements OnInit {
     const max = ( document.documentElement.scrollHeight || document.body.scrollHeight );
 
     if( pos > max ){
-
       if( this.mediaService.loading ){ return; }
       this.loadData.emit();
-   
     }
-
   }
 
   constructor( private mediaService:MediaService ) { }

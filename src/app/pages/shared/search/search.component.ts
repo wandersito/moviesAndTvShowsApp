@@ -34,7 +34,9 @@ export class SearchComponent implements OnInit {
         })
       )
     .subscribe( results =>  {
-    this.results = results;
+      if( results.length > 0 ){
+        this.results = results;
+      }
     })
   }
 }

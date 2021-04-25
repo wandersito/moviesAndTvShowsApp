@@ -1,0 +1,8 @@
+<p-carousel [value]="results" [numVisible]="5" [numScroll]="1" [autoplayInterval]="3000" [responsiveOptions]="responsiveOptions" *ngIf="results.length>0" [circular]="true">
+    <ng-template let-result pTemplate="item">
+        <div class="p-mx-1">
+            <img  [src]="result.profile_path | imageRoute: carouselImgSize" [alt]="result.title || result.name" class="carousel-image" />
+            <label> <strong> {{ result.name }} </strong> as  <strong> {{ result.character }} </strong> </label>
+        </div>
+    </ng-template>
+</p-carousel>
