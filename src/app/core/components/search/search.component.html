@@ -1,0 +1,6 @@
+<p-autoComplete [(ngModel)]="selectedCountry" 
+                [suggestions]="filteredCountries" 
+                (completeMethod)="filterCountry()"
+                field="name" 
+                [minLength]="1">
+</p-autoComplete>
